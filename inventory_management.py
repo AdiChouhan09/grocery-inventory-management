@@ -16,6 +16,7 @@ class Inventory:
     def __init__(self):
         self.items: List[Item] = []
 
+    # ---------- Core ops ----------
     def insert_item(self, item: Item) -> bool:
         """Insert only if the item_id is unique."""
         if any(it.item_id == item.item_id for it in self.items):
@@ -34,6 +35,7 @@ class Inventory:
         print("Item not found")
         return False
 
+    # ---------- Search ----------
     def search_item(self, key) -> Optional[Item]:
         """Search by ID (int/str) or by name (case-insensitive)."""
         kstr = str(key).strip().lower()
@@ -44,6 +46,7 @@ class Inventory:
         print("Item not found")
         return None
 
+    # ---------- Inventory adjustments ----------
     def restock(self, item_id: int, qty_added: int, new_price: Optional[float] = None) -> bool:
         if qty_added <= 0:
             print("Invalid restock quantity")
@@ -87,7 +90,8 @@ class Inventory:
                 return True
         print("Item not found")
         return False
-        
+
+    # ---------- Reports / Views ----------
     def price_quantity_table(self):
         n = len(self.items)
         table = [[self.items[i].price, self.items[i].quantity] for i in range(n)]
@@ -133,7 +137,7 @@ class Inventory:
         print(f"Inventory Value: {total_value:.2f}")
 
 
-# Example
+# ---------- Quick demo ----------
 if __name__ == "__main__":
     store = Inventory()
 
@@ -144,7 +148,7 @@ if __name__ == "__main__":
     store.insert_item(item1)
     store.insert_item(item2)
     store.insert_item(item3)
-    store.insert_item(Item(101, "DuplicateMilk", 5, 41.0)) 
+    store.insert_item(Item(101, "DuplicateMilk", 5, 41.0))  # duplicate id -> rejected
 
     print("\nALL Items:")
     for it in store.items:
@@ -164,4 +168,3 @@ if __name__ == "__main__":
     store.sparse_representation(threshold=2)
     store.low_stock_report(threshold=3)
     store.summary()
-
