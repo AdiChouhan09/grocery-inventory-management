@@ -80,6 +80,16 @@ Each implemented function includes **time and space complexity evaluation**:
 
 ---
 
-## Author
+## Screenshots
+<img width="1337" height="797" alt="Screenshot 2025-10-02 172239" src="https://github.com/user-attachments/assets/2e06ffb8-ac17-432d-8e8d-019c79c9579b" />
+
+<img width="1322" height="184" alt="Screenshot 2025-10-02 172307" src="https://github.com/user-attachments/assets/e5eaf412-e185-44f9-9525-42a9dce3cd47" />
+
+---
+
+## **Author**  
+- **Name:** Aditya Chouhan  
+- **Roll No:** 2401830001  
+- **Course:** B.Sc. (H) Cybersecurity  
 
 
